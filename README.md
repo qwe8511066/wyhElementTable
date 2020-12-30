@@ -20,11 +20,10 @@ components: {
     wyhElementTable,  
   },  
 
-# 如何使用
-在项目中用使用 wyhElementTable
-<template>  
-  <wyhElementTable :column="column" :list="list" ></wyhElementTable>  
-</template>  
+# 如何使用 
+![]<template>  
+  ![]<wyhElementTable :column="column" :list="list" ></wyhElementTable>  
+![]</template>  
 <script>  
   export default {  
      data() {  
@@ -73,10 +72,6 @@ components: {
 | definitionPageSizeValue     | 分页的PageSize的默认值   | Number |  |  10 | 
 | requestType     | 请求开源工具的类型   | String | '$http' |  '' | 
 
-
-## 使用组件
-<wyhElementTable  ref="wyhElementTable" :column="column" :list="list" ></wyhElementTable>  
-this.$wyhElementTable.resetColumn()  
 ## 组件方法
 **publicTabel**
 | 参数      | 说明    | 类型      | 可选值       | 默认值   |
@@ -85,6 +80,10 @@ this.$wyhElementTable.resetColumn()
 | search     | 搜索列表(会把页码改成1)    | Function    | null | null  |
 | reset     | 重置列表(把页码改成1并且初始化myPages的参数)  | Function | null | null |
 | resetColumn   |  重置列(根据列的iif判断渲染或者不渲染) | Function    | null | null  |
+
+## 使用组件的方法
+![]<wyhElementTable  ref="wyhElementTable" :column="column" :list="list" ></wyhElementTable>  
+this.$wyhElementTable.resetColumn()  
 
 ## 项目
 ```bash
