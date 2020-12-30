@@ -5,12 +5,19 @@
 # 原型 
 **Live demo:** https://qwe8511066.github.io/wyhElementTable/dist/index.html#/staticData
 
+# 使用注意 
+
+<font color="green"> 必须全局注册请求工具如：Vue.prototype.$http = service </font>  
+<font color="green"> 必须全局注册请求工具如：Vue.prototype.$http = service </font>  
+<font color="green"> 必须全局注册请求工具如：Vue.prototype.$http = service </font>   
+<font color="green"> 默认$http </font>   
+
 # 使用说明 
-npm install wyh-element-table --save
+npm install wyh-element-table --save  
 
 # 全局注册使用
-在 `main.js` 文件中引入插件并注册
-import wyhElementTable from 'wyh-element-table'  
+在 `main.js` 文件中引入插件并注册  
+import wyhElementTable from 'wyh-element-table'    
 Vue.use(wyhElementTable)  
 
 # 局部注册使用
@@ -18,34 +25,7 @@ Vue.use(wyhElementTable)
 import wyhElementTable from 'wyh-element-table'  
 components: {  
     wyhElementTable,  
-  },  
-
-# 如何使用 
-![]<template>  
-  ![]<wyhElementTable :column="column" :list="list" ></wyhElementTable>  
-![]</template>  
-<script>  
-  export default {  
-     data() {  
-    return {  
-      column: [  
-        {  
-          prop: 'name',  
-          label: '名称',  
-        },  
-      ],  
-      list: [],  
-    }  
-  },  
-  created() {  
-    for (let index = 0; index < 50; index++) {  
-      this.list.push({ name: index })  
-    }  
-  },  
-  }  
-</script>  
-  
-
+},   
 
 ## 组件属性参数
 **publicTabel**
@@ -80,10 +60,6 @@ components: {
 | search     | 搜索列表(会把页码改成1)    | Function    | null | null  |
 | reset     | 重置列表(把页码改成1并且初始化myPages的参数)  | Function | null | null |
 | resetColumn   |  重置列(根据列的iif判断渲染或者不渲染) | Function    | null | null  |
-
-## 使用组件的方法
-![]<wyhElementTable  ref="wyhElementTable" :column="column" :list="list" ></wyhElementTable>  
-this.$wyhElementTable.resetColumn()  
 
 ## 项目
 ```bash
