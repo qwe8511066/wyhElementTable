@@ -23,20 +23,50 @@
           <span>代码片段</span>
         </div>
         <pre>
-    &lt;wyhElementTable :column="column" listServe="/getList"&gt;
-    &lt;/wyhElementTable&gt; 
-  data() {
+    &lt;el-form ref=&quot;form&quot; :model=&quot;myPages&quot; label-width=&quot;180px&quot; class=&quot;myForm&quot;&gt;
+      &lt;el-form-item label=&quot;id的设置&quot;&gt;
+        &lt;el-input v-model=&quot;myPages.test.id&quot;&gt;&lt;/el-input&gt;
+      &lt;/el-form-item&gt;
+      &lt;el-form-item label=&quot;name的设置&quot;&gt;
+        &lt;el-input v-model=&quot;myPages.admin.user.name&quot;&gt;&lt;/el-input&gt;
+      &lt;/el-form-item&gt;
+
+      &lt;el-form-item&gt;
+        &lt;el-button type=&quot;primary&quot; @click=&quot;resetFn&quot;&gt;重置&lt;/el-button&gt;
+        &lt;el-button type=&quot;primary&quot; @click=&quot;searchFn&quot;&gt;搜索&lt;/el-button&gt;
+      &lt;/el-form-item&gt;
+    &lt;/el-form&gt;
+
+    &lt;wyhElementTable :myPages=&quot;myPages&quot; ref=&quot;wyhElementTable&quot; :column=&quot;column&quot; listServe=&quot;/getList&quot;&gt;&lt;/wyhElementTable&gt;
+
+ data() {
     return {
-       column: [
+      myPages: {
+        test: {
+          id: 1,
+        },
+        admin: {
+          user: {
+            name: &#x27;wyh&#x27;,
+          },
+        },
+      },
+      column: [
         {
-          prop: 'name',
-          label: '名称',
+          prop: &#x27;name&#x27;,
+          label: &#x27;名称&#x27;,
         },
       ],
     }
-  }, 
   },
-}
+  methods: {
+    searchFn() {
+      this.$refs.wyhElementTable.search()
+    },
+    resetFn(value) {
+      this.$refs.wyhElementTable.reset()
+    },
+  },
   </pre>
       </el-card>
     </div>

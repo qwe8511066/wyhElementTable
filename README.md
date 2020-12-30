@@ -3,49 +3,49 @@
 > 基于element table 和lb-table 做的一个通用的业务列表组件
 
 # 原型 
-**Live demo:** https://github.com/qwe8511066/wyhElementTable/dist/index.html#/staticData
+**Live demo:** https://qwe8511066.github.io/wyhElementTable/dist/index.html#/staticData
 
 # 使用说明 
 npm install wyh-element-table --save
 
 # 全局注册使用
 在 `main.js` 文件中引入插件并注册
-import wyhElementTable from 'wyh-element-table'
-Vue.use(wyhElementTable)
+import wyhElementTable from 'wyh-element-table'  
+Vue.use(wyhElementTable)  
 
 # 局部注册使用
-在对应的文件中引入插件并注册
-import wyhElementTable from 'wyh-element-table'
-components: {
-    wyhElementTable,
-  },
+在对应的文件中引入插件并注册  
+import wyhElementTable from 'wyh-element-table'  
+components: {  
+    wyhElementTable,  
+  },  
 
 # 如何使用
 在项目中用使用 wyhElementTable
-<template>
-  <wyhElementTable :column="column" :list="list" ></wyhElementTable>
-</template>
-<script>
-  export default {
-     data() {
-    return {
-      column: [
-        {
-          prop: 'name',
-          label: '名称',
-        },
-      ],
-      list: [],
-    }
-  },
-  created() {
-    for (let index = 0; index < 50; index++) {
-      this.list.push({ name: index })
-    }
-  },
-  }
-</script>
-
+<template>  
+  <wyhElementTable :column="column" :list="list" ></wyhElementTable>  
+</template>  
+<script>  
+  export default {  
+     data() {  
+    return {  
+      column: [  
+        {  
+          prop: 'name',  
+          label: '名称',  
+        },  
+      ],  
+      list: [],  
+    }  
+  },  
+  created() {  
+    for (let index = 0; index < 50; index++) {  
+      this.list.push({ name: index })  
+    }  
+  },  
+  }  
+</script>  
+  
 
 
 ## 组件属性参数
@@ -74,9 +74,10 @@ components: {
 | requestType     | 请求开源工具的类型   | String | '$http' |  '' | 
 
 
+## 使用组件
+<wyhElementTable  ref="wyhElementTable" :column="column" :list="list" ></wyhElementTable>  
+this.$wyhElementTable.resetColumn()  
 ## 组件方法
-使用<wyhElementTable  ref="wyhElementTable" :column="column" :list="list" ></wyhElementTable>
-this.$wyhElementTable.resetColumn()
 **publicTabel**
 | 参数      | 说明    | 类型      | 可选值       | 默认值   |
 |---------- |-------- |---------- |-------------  |-------- |
